@@ -1,0 +1,44 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 10rem [col-start]);
+    grid-template-rows: repeat(4, 10rem [col-start]);
+    grid-gap: 1rem;
+}
+.parent article {
+    background-color: rgb(54, 86, 112);
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hide-card {
+    background-color: rgb(54, 86, 112);
+}
+
+.material-icons {
+    transform: scale(3);
+    color: rgb(22, 22, 22);
+}
+
+.parent .hide {
+    background-color: grey;
+}
+
+.parent .hide .material-icons {
+    color: grey;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.disabled {
+    pointer-events: none;
+}
