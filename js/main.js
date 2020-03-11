@@ -7,12 +7,13 @@ function showCards () {
     let noMatch = [];
     let pairs = [];
     let turns = 0;
+    let timer;
+    let second = 0;
 
     for(let card of cards) {
         const icon = card.querySelector(".material-icons");
 
         card.addEventListener("click", () => {
-            let timer = setTimeout(1000);
 
             if(noMatch.length >= 2) {
                 for(let item of noMatch) {
@@ -40,22 +41,32 @@ function showCards () {
             }
             turns++;
             console.log(turns);
+
+            if(turns == 1) {
+                timer = setInterval(function() {
+                    second++;
+
+                }, 1000);
+            }
             cardsToCheck = [];
             }
 
 
             if (pairs.length == cards.length) {
-                console.log("WInner");
+                
                 alertWinner();
                 myTurns(turns);
-                clearTimeout(timer);
-                myTime(timer);
+                clearInterval(timer);
+                myTime(second);
+                console.log(second);
+                
             }
 
         })
 
     }
 }
+
 
 function myTurns(turns){
     const winnerSection = document.querySelector(".winner");
@@ -65,6 +76,7 @@ function myTurns(turns){
 
 
 }
+
 function myTime(time){
     const winnerSection = document.querySelector(".winner");
     const text = document.createElement("p");
