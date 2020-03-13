@@ -1,5 +1,5 @@
 
-// localStorage.clear();
+//localStorage.clear();
 function showCards () {
     randomCards();
 
@@ -170,10 +170,16 @@ function renderHighScores() {
     const ul = document.createElement("ul");
     scoreSection.append(ul);
 
+    if(!localStorage.getItem("placing")) {
+        const message = document.createElement("p");
+        scoreSection.append(message);
+        message.innerText = "There are no current highscores. It is time for you to play!";
+    }else {
     for (let time of bestHighScore) {
         const li = document.createElement("li");
         ul.append(li);
         li.innerText = "Username: " + time + " seconds!";
+    }
 
     }
 }
