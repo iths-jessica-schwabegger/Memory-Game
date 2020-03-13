@@ -1,6 +1,37 @@
+body {
+    margin: 0;
+    background-color: darkslategrey;
+}
 header {
     display: flex;
     justify-content: center;
+    background-color: rgba(0, 107, 107, 0.39);
+    color: white;
+}
+p {
+    font-family: "Helvetica";
+    font-weight: lighter;
+}
+h1, h2 {
+    font-family: 'Poiret One', cursive;
+    font-weight: normal;
+}
+
+.highscores p {
+    color: white;
+    font-family: 'Poiret One', cursive;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+.highscores {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem 0 0 4rem;
 }
 .parent {
     display: grid;
@@ -9,12 +40,13 @@ header {
     grid-gap: 1rem;
 }
 .parent article {
-    background-color: rgb(54, 86, 112);
+    background-color: rgb(197, 197, 197);
     border-radius: 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: solid 1px dimgrey;
 }
 .root {
     display: flex;
@@ -32,7 +64,7 @@ header {
 }
 
 .parent .hide {
-    background-color: grey;
+    background-color: rgb(54, 86, 112);
 }
 
 .parent .hide .material-icons {
@@ -48,10 +80,39 @@ header {
 }
 
 .winner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 10rem;
     width: 50rem;
     height: 30rem;
     background-color: rgb(144, 160, 184);
     border-radius: 0.2rem;
+}
+
+section h2 {
+    margin: 3rem 0 5rem 0;
+}
+
+.winner button {
+    border: none;
+    padding: 0.5rem 2rem;
+    margin: 2rem;
+    background-color: rgb(54, 86, 112);
+    color: white;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.score-section {
+    width: 12rem;
+    height: 20rem;
+    background-color: grey;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.display-none {
+    display: none;
 }
